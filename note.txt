@@ -12,3 +12,5 @@
 		1.jar 包
 		2.加入Spring 配置文件
 	3）. 整合Spring + hibernate
+
+3. 实际编写代码
