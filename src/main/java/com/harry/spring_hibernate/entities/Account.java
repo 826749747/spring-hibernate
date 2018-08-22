@@ -1,29 +1,33 @@
 package com.harry.spring_hibernate.entities;
 
 public class Account {
-	
 
-	private int id;
+	private Integer id;
 	private String userName;
-	private int balance;
+	private Integer balance;
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+
+	public void setId(Integer id) {
 		this.id = id;
 	}
+
 	public String getUserName() {
 		return userName;
 	}
+
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	public int getBalance() {
+
+	public Integer getBalance() {
 		return balance;
 	}
-	public void setBalance(int balance) {
+
+	public void setBalance(Integer balance) {
 		this.balance = balance;
 	}
-	
+
 }

@@ -1,28 +1,23 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated Aug 21, 2018 5:00:44 PM by Hibernate Tools 3.5.0.Final -->
-
+<!-- Generated Aug 22, 2018 9:24:05 AM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.harry.spring_hibernate.entities.Book" table="SH_BOOK">
+    <class name="com.harry.spring_hibernate.entities.Book" table="BOOK">
         <id name="id" type="java.lang.Integer">
             <column name="ID" />
-            <generator class="native" />
+            <generator class="assigned" />
         </id>
-        
         <property name="bookName" type="java.lang.String">
             <column name="BOOK_NAME" />
         </property>
-        
         <property name="isbn" type="java.lang.String">
             <column name="ISBN" />
         </property>
-        
-        <property name="price" type="int">
+        <property name="price" type="java.lang.Integer">
             <column name="PRICE" />
         </property>
-        
-        <property name="stock" type="int">
+        <property name="stock" type="java.lang.Integer">
             <column name="STOCK" />
         </property>
     </class>

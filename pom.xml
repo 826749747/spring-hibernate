@@ -115,6 +115,7 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>5.3.5.Final</version>
 		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.0-api -->
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
