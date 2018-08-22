@@ -14,12 +14,30 @@ public class BookShopServiceImpl implements BookShopService {
 	@Autowired
 	private BookShopDao bookShopDao;
 	
-	@Transactional(propagation=Propagation.REQUIRES_NEW)
+	/**
+	 * Spring hibernate 事务的流程
+	 * 1.在方法开始之前
+	 * 		1.获取Session
+	 * 		2.把Session和当前线程绑定，这样就可以在Dao中使用SessionFactory的getCurrentSession() 方法来获取Session了
+	 * 		3.开启事务
+	 * 
+	 * 2.若正常结束，即没有出现异常，则
+	 * 		1.提交事务
+	 * 		2.使和当前线程绑定的Session 解除绑定
+	 *		3.关闭Session
+	 *
+	 * 3.若方法出现异常，则
+	 * 		1.回滚事务
+	 * 		2.使和当前线程绑定的Session 解除绑定
+	 *		3.关闭Session
+	 * */
+	//@Transactional(propagation=Propagation.REQUIRES_NEW)
 	public void purchar(String userName, String Isbn) {
 		
 		int price = bookShopDao.findBookPriceByIsbn(Isbn);
-		bookShopDao.updateUserAccount(userName, price);
 		bookShopDao.updateBookStock(Isbn);
+		bookShopDao.updateUserAccount(userName, price);
+		
 		
 	}
 
